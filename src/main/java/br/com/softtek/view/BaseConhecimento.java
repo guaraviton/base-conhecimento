@@ -68,7 +68,7 @@ public class BaseConhecimento extends Frame {
 		frame.setResizable(false);
 		frame.setType(Window.Type.POPUP);
 		frame.setTitle("Base de Conhecimento Softtek - Petrobras");
-		frame.setBounds(100, 100, 855, 584);
+		frame.setBounds(100, 100, 855, 595);
 		frame.setDefaultCloseOperation(3);
 		frame.getContentPane().setLayout(null);
 		
@@ -229,7 +229,7 @@ public class BaseConhecimento extends Frame {
 	private List<String> getItens(String diretorioBase, boolean isDir) {
 		List<String> itens = new ArrayList<String>();
 		File diretorio = new File(DIRETORIO_BASE_RAIZ + (diretorioBase != null ? diretorioBase : ""));
-		if(diretorio.exists()){
+		if(diretorio.exists() && diretorio.listFiles() != null){
 			for(File file : diretorio.listFiles()){
 				if(isDir && file.isDirectory()){
 					itens.add(file.getName());
